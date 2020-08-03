@@ -22,7 +22,7 @@
           Our History
         </ion-card-title>
         
-        <p>
+        <p text-wrap>
           Started in 2010, Ristorante
           con Fusion quickly 
           established itself as a culinary 
@@ -37,7 +37,8 @@
           the world, you never know 
           what will arrive on your plate 
           the next time you visit us.
-  
+        </p>
+        <p text-wrap>
           The restaurant traces its 
           humble beginnings to The 
           Frying Pan, a successful chain 
@@ -50,29 +51,32 @@
     </ion-card>
   </div>
   <div>
-    <ion-card *ngIf="leaders">
-    
+    <ion-card>
+      <ion-card-header>
+        Corporate Leadership
+      </ion-card-header>
       <ion-card-content>
-        <ion-card-title>
-          Corporate Leadership
-        </ion-card-title>
-        <ion-list *ngFor="let leader of leaders">
-          <ion-row>
-            <ion-col>
-              <ion-chip>
-                <ion-avatar>
-                  <img src="{{BaseURL + leader.image}}"/>
-                </ion-avatar>
-              </ion-chip>
-            </ion-col>
-
-            <ion-col>
-              <strong>{{leader.name}} {{leader.designation}}</strong>
-              {{leader.description}}
-            </ion-col>
-          </ion-row>  
-
-        </ion-list> 
+        <div *ngIf="leaders">
+          <ion-list no-lines>
+            <ion-item *ngFor="let leader of leaders">
+              <ion-avatar item-start>
+                <img src="{{ BaseURL + leader.image }}" alt="{{ leader.image }}">
+              </ion-avatar>
+              <h2 text-wrap>{{ leader.name }}</h2>
+              <h4>{{ leader.designation }}</h4>
+              <p text-wrap>{{ leader.description }}</p>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div [hidden]="leaders || errMsg">
+          <ion-spinner></ion-spinner>
+          <h4>Loading ... Please Wait</h4>
+        </div>
+  
+        <div *ngIf="errMsg">
+          <h2>Error</h2>
+          <h4>{{ errMsg }}</h4>
+        </div>
       </ion-card-content>
     </ion-card>
   </div>
