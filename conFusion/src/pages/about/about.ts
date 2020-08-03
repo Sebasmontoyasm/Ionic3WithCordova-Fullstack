@@ -21,28 +21,6 @@ export class AboutPage implements OnInit {
   constructor(
     private leaderservice: LeaderProvider,
     @Inject('BaseURL') private BaseURL) { }
-  
-  /**
-   * The leaderservice is that because,
-   *  I used HttpClient for
-   *  the previos version don't function correct now (http)
-   */
-
-   /**
-    * Added my providers leader.ts
-    * 
-    * new APIs:
-    * 
-    * import { HttpClient } from '@angular/common/http'; 
-    * import { map, catchError } from 'rxjs/operators';
-    * 
-    * CODE:
-    * 
-    * getLeaders(): Observable<Leader[]> {
-     return this.http.get<Leader[]>(baseURL+'leaders')
-    .pipe(catchError(this.processHTTPMsgService.handleError));
-  }
-    */
    
   ngOnInit() {
     this.leaderservice.getLeaders()
