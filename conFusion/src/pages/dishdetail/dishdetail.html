@@ -4,13 +4,38 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-header>
-
   <ion-navbar color="primary">
-    <ion-title>Dish Details</ion-title>
-  </ion-navbar>
+    <ion-title>dishdetail</ion-title>
 
+    <ion-buttons end>
+      <button ion-button icon-only (click)="selectAction()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
 </ion-header>
+
+<ion-menu>
+  <ion-header>
+    <ion-toolbar color="primary-dark">
+      <ion-title>Ristorante Con Fusion</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button color="primary-pale" >
+        <ion-icon name="more" item-right>sdasda</ion-icon>
+      </button>
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
 
 
 <ion-content padding>

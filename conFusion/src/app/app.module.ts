@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FavoriteProvider } from '../providers/favorite/favorite';
 import { ReservationPage } from '../pages/reservation/reservation';
 import { FavoritesPage } from '../pages/favorites/favorites';
+import { CommentPage } from '../pages/comment/comment';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { FavoritesPage } from '../pages/favorites/favorites';
     ContactPage,
     DishdetailPage,
     ReservationPage,
-    FavoritesPage
+    FavoritesPage,
+    CommentPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { FavoritesPage } from '../pages/favorites/favorites';
     ContactPage,
     DishdetailPage,
     ReservationPage,
-    FavoritesPage
+    FavoritesPage,
+    CommentPage
   ],
   providers: [
     StatusBar,
