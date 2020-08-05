@@ -23,7 +23,8 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
 import { ReservationPage } from '../pages/reservation/reservation';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { CommentPage } from '../pages/comment/comment';
-
+import { LoginPage } from '../pages/login/login';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -35,12 +36,14 @@ import { CommentPage } from '../pages/comment/comment';
     DishdetailPage,
     ReservationPage,
     FavoritesPage,
-    CommentPage
+    CommentPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,7 +55,8 @@ import { CommentPage } from '../pages/comment/comment';
     DishdetailPage,
     ReservationPage,
     FavoritesPage,
-    CommentPage
+    CommentPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
