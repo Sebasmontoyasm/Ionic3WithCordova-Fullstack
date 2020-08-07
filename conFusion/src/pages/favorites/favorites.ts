@@ -21,8 +21,7 @@ export class FavoritesPage implements OnInit {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private favoriteservice: FavoriteProvider, public toastCtrl: ToastController,
-    private loadingCtrl: LoadingController,
-    private alertCtrl: AlertController,
+    private loadingCtrl: LoadingController, private alertCtrl: AlertController,
     @Inject('BaseURL') private BaseURL) {
   }
 
@@ -30,6 +29,8 @@ export class FavoritesPage implements OnInit {
     this.favoriteservice.getFavorites()
       .subscribe(favorites => this.favorites = favorites,
         errmess => this.errMess = errmess);
+
+        
   }
 
   ionViewDidLoad() {
